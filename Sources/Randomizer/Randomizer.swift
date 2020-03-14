@@ -35,6 +35,23 @@ extension String: Random {
         return String(randomAlphabet)
     }
     
+    public static func random(maxLenght: UInt) -> String {
+        return String(
+            [Character].random(atLeast: maxLenght) { Character.randomAlphabet }
+        )
+    }
+    
+}
+
+extension Character: Random {
+    
+    public static var random: Character {
+        return String.random(maxLenght: 1).first!
+    }
+    
+    public static var randomAlphabet: Character {
+        return ("a"..."z").characters.pickRandomly
+    }
 }
 
 extension ClosedRange where Bound == Unicode.Scalar {
