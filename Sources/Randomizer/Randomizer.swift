@@ -35,10 +35,9 @@ extension String: Random {
         return String(randomAlphabet)
     }
     
-    public static func random(maxLenght: UInt) -> String {
-        return String(
-            [Character].random(atLeast: maxLenght) { Character.randomAlphabet }
-        )
+    public static func random(minLength: UInt) -> String {
+        let chars = [Character].random(atLeast: minLength) { Character.randomAlphabet }
+        return String(chars)
     }
     
 }
@@ -46,7 +45,7 @@ extension String: Random {
 extension Character: Random {
     
     public static var random: Character {
-        return String.random(maxLenght: 1).first!
+        return String.random(minLength: 1).first!
     }
     
     public static var randomAlphabet: Character {
@@ -132,5 +131,11 @@ extension Optional: Random where Wrapped: Random {
         return shouldContainValue ? .some(.random) : .none
     }
     
+}
+
+extension UInt: Random {
+    public static var random: UInt {
+        return UInt((0..<127).pickRandomly)
+    }
 }
 

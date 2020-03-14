@@ -2,14 +2,14 @@ import XCTest
 @testable import Randomizer
 
 final class RandomizerTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Randomizer().text, "Hello, World!")
+    
+    func testRandomStringWithMinCountProducesRightResult() {
+        let count = UInt.random
+        let output = [String].random(atLeast: count)
+        XCTAssert(output.count >= count)
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("test random string wit max count works", testRandomStringWithMinCountProducesRightResult),
     ]
 }
