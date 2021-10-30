@@ -29,6 +29,6 @@ Once you have your Swift package set up, adding Randomizer as a dependency is as
 
 ```
 dependencies: [
-.package(url: "git@github.com:kandelvijaya/Randomizer.git", .upToNextMajor(from: "1.0"))
+.package(url: "https://github.com/kandelvijaya/Randomizer.git", from: "1.0.0")
 ]
 ```
