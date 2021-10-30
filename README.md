@@ -27,8 +27,8 @@ The Swift Package Manager is a tool for automating the distribution of Swift cod
 
 Once you have your Swift package set up, adding Randomizer as a dependency is as easy as adding it to the dependencies value of your Package.swift.
 
-```
+```sh
 dependencies: [
-.package(url: "https://github.com/kandelvijaya/Randomizer.git", from: "1.0.0")
+    .package(url: "https://github.com/kandelvijaya/Randomizer.git", from: "1.0.0")
 ]
 ```
